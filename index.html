@@ -1,0 +1,60 @@
+<html>
+
+<head>
+    <title>
+        Sketchy!
+    </title>
+    <link href="styles.css" rel="stylesheet" type="text/css">
+
+    <body>
+        <main>
+            <h1>Sketch whatever you want!</h1>
+            <div>
+                <div class='options'>
+                    <div class='option'>
+                        <button id='btnColor' class='btnOption selected'>
+                            <p>Color</p>
+                            <input type='color' id='colorSelec'>
+                        </button>
+                    </div>
+                    <div class='option'>
+                        <button id='btnRainbow' class='btnOption'>
+                            <p>Rainbow Mode!</p>
+                        </button>
+                    </div>
+                    <div class='option'>
+                        <button id='btnGreyScale' class='btnOption'>
+                            <p>Grey Scale</p>
+                        </button>
+                    </div>
+                    <div class='option'>
+                        <button id='btnEraser' class='btnOption'>
+                            <p>Eraser</p>
+                        </button>
+                    </div>
+                    <div class='option'>
+                        <button id='btnReset'>
+                            <p>Reset</p>
+                        </button>
+                    </div>
+                </div>
+                <div id='container' ondragstart="return false;" ondrop="return false;" disabled>
+                </div>
+                <div class='option'>
+                    <button id='btnColor'>
+                        <p>Background Color</p>
+                        <input type='color' value='#FFFFFF' id='backgroundColor'>
+                    </button>
+                </div>
+                <div class="slidecontainer">
+                    <p>Grid Length: <span id='gridLength'>20</span></p>
+                    <input type="range" min="4" max="100" value="20" class="slider" id="myRange">
+                </div>
+            </div>
+        </main>
+    </body>
+</head>
+<script src='./script.js' type='text/javascript'>
+</script>
+
+</html>
