@@ -166,3 +166,28 @@ function greyScaleColor(prevValue) {
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
 }
+
+document.querySelector('#btnDownload').addEventListener('click', downloadImage)
+
+function downloadImage() {
+    startLoader();
+    var canvas = document.getElementById("myCanvas");
+    var context = canvas.getContext('2d');
+    domvas.toImage(document.getElementById("container"), function() {
+        context.drawImage(this, 0, 0);
+        var img = canvas.toDataURL("image/png");
+        var a = document.createElement("a"); //Create <a>
+        a.href = img; //Image Base64 Goes here
+        a.download = "Image.png"; //File name Here
+        a.click(); //Downloaded file
+        endLoader();
+    });
+}
+
+function startLoader() {
+    document.querySelector('#loader').classList.add('loading');
+}
+
+function endLoader() {
+    document.querySelector('#loader').classList.remove('loading');
+}
